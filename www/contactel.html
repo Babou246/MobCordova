@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContacTel</title>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/themes/contact.min.css">
+    <link rel="stylesheet" href="lib/themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="lib/jquery.mobile.structure-1.4.5.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="cordova.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <!-- Page d'accueil -->
+    <div id="hompage" data-role="page">
+        <div data-role="header">
+            <h1>ContacTel</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <a href="#addContactPage" data-role="button" data-icon="plus" data-transition="slidedown">Ajouter</a>
+            <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher un Contact">
+                <!-- Contacts will be loaded here -->
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>M1IABD &copy; 2024</h1>
+        </div>
+    </div>
+
+    <!-- Ajouter un contact -->
+    <div id="addContactPage" data-role="page">
+        <div data-role="header">
+            <a href="#hompage" data-role="button" data-icon="home" data-iconpos="notext">Accueil</a>
+            <h1>Ajouter Contact</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="addContactform">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom" required>
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address">
+                <label for="numero">Numéro</label>
+                <input type="number" name="numero" id="numero" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <button id="addContactButton" data-role="button">Ajouter</button>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>M1IABD &copy; 2024</h1>
+        </div>
+    </div>
+
+    <!-- Détails du contact -->
+    <div id="detailsContactPage" data-role="page">
+        <div data-role="header">
+            <a href="#hompage" data-role="button" data-icon="home" data-iconpos="notext">Accueil</a>
+            <h1>Détails du Contact</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="detailContactForm">
+                <label for="detailNom">Nom</label>
+                <input type="text" id="detailNom" name="nom">
+                <label for="detailPrenom">Prénom</label>
+                <input type="text" id="detailPrenom" name="prenom">
+                <label for="detailAddress">Adresse</label>
+                <input type="text" id="detailAddress" name="address">
+                <label for="detailNumero">Numéro</label>
+                <input type="text" id="detailNumero" name="numero">
+                <label for="detailEmail">Email</label>
+                <input type="email" id="detailEmail" name="email">
+                <button id="btn-update" type="button" data-role="button">Mettre à jour</button>
+                <button id="btn-delete" type="button" data-role="button">Supprimer</button>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>M1IABD &copy; 2024</h1>
+        </div>
+    </div>
+</body>
+
+</html>

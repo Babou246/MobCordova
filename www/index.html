@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application ToDo List</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+<!-- Page d'accueil -->
+<div data-role="page" id="homePage">
+    <div data-role="header">
+        <h1>Accueil</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <h2>Bienvenue sur votre ToDo List!</h2>
+        <p>Cliquez sur le bouton ci-dessous pour accéder à votre liste de tâches.</p>
+        <a href="#todoPage" class="ui-btn ui-btn-primary">Accéder à la To-Do List</a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>&copy; BABACAR</h1>
+    </div>
+</div>
+
+<!-- Page To-Do List -->
+<div data-role="page" id="todoPage">
+    <div data-role="header">
+        <a href="#homePage" class="ui-btn ui-icon-home ui-btn-icon-notext">Accueil</a> <!-- Bouton pour redirection -->
+        <h1>To-Do List</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <form>
+            <label for="task"><strong>Ajouter une tâche</strong></label>
+            <input type="text" id="task" placeholder="Entrer votre tâche...">
+            <input type="button" class="add-btn" value="Ajouter" onclick="ajouterTache()">
+            <input type="button" class="reset-btn" value="Réinitialiser" onclick="reinitialiserListe()">
+        </form>
+        <div data-role="header">
+            <h2 class="taches-en-cours"><strong>Tâches en cours</strong></h2>
+        </div>
+        <ul id="taskList" data-role="listview" data-inset="true"></ul>
+        <div data-role="header">
+            <h2 class="taches-terminees"><strong>Tâches terminées</strong></h2>
+        </div>
+        <ul id="completedTaskList" data-role="listview" data-inset="true"></ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1><i class="fas fa-copyright"></i> M1IABD &copy; 2024</h1>
+    </div>
+</div>
+
+<!-- Page d'accueil ContacTel -->
+<div id="hompage" data-role="page">
+    <div data-role="header">
+        <h1>ContacTel</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <a href="#addContactPage" data-role="button" data-icon="plus" data-transition="slidedown">Ajouter</a>
+        <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher un Contact">
+            <!-- Contacts will be loaded here -->
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>M1IABD &copy; 2024</h1>
+    </div>
+</div>
+
+<!-- Ajouter un contact -->
+<div id="addContactPage" data-role="page">
+    <div data-role="header">
+        <a href="#hompage" data-role="button" data-icon="home" data-iconpos="notext">Accueil</a> <!-- Bouton pour redirection -->
+        <h1>Ajouter Contact</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <form id="addContactform">
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" id="nom" required>
+            <label for="prenom">Prénom</label>
+            <input type="text" name="prenom" id="prenom" required>
+            <label for="address">Adresse</label>
+            <input type="text" name="address" id="address">
+            <label for="numero">Numéro</label>
+            <input type="number" name="numero" id="numero" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <button id="addContactButton" data-role="button">Ajouter</button>
+        </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>M1IABD &copy; 2024</h1>
+    </div>
+</div>
+
+<!-- Détails du contact -->
+<div id="detailsContactPage" data-role="page">
+    <div data-role="header">
+        <a href="#hompage" data-role="button" data-icon="home" data-iconpos="notext">Accueil</a> <!-- Bouton pour redirection -->
+        <h1>Détails du Contact</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <form id="detailContactForm">
+            <label for="detailNom">Nom</label>
+            <input type="text" id="detailNom" name="nom">
+            <label for="detailPrenom">Prénom</label>
+            <input type="text" id="detailPrenom" name="prenom">
+            <label for="detailAddress">Adresse</label>
+            <input type="text" id="detailAddress" name="address">
+            <label for="detailNumero">Numéro</label>
+            <input type="text" id="detailNumero" name="numero">
+            <label for="detailEmail">Email</label>
+            <input type="email" id="detailEmail" name="email">
+            <button id="btn-update" type="button" data-role="button">Mettre à jour</button>
+            <button id="btn-delete" type="button" data-role="button">Supprimer</button>
+        </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>M1IABD &copy; 2024</h1>
+    </div>
+</div>
+
+</body>
+</html>
